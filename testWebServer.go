@@ -11,7 +11,7 @@ type HelloWeb struct{}
 func (hlo HelloWeb) ServeHTTP(wr http.ResponseWriter, req *http.Request) {
 	log.Println("Receive input header:", req.Header)
 	log.Println("Receive input body:", req.Body)
-	//log.Println("Entered URL by user:", req.)
+	log.Println("Entered URL by user:", req.Header.Get("Referer"))
 	fmt.Fprint(wr, "<h1>Hello From GOLANG Web</h1>")
 }
 
